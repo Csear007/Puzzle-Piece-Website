@@ -1,0 +1,26 @@
+.header {
+ border-bottom: 2px solid black;
+}
+.header h1 {
+ display: inline;
+}
+.header p { 
+ display: inline;
+}
+.header ul {
+	display: inline;
+	list-style-type: none;
+}
+.header li{
+	display: inline;
+}
+
+.jumbotron {
+	height: 350px;
+	background-image: url();
+	background-color: #47555E;
+}
+
+.jumbotron h1{
+	color: #7AA5D2;
+}
