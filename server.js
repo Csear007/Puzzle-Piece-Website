@@ -16,7 +16,7 @@ function onRequest(request, response) {
 
 	if ( request.method == "GET" && request.url == '/' ) {
 		response.writeHead(200, {"Content-Type": "text/html"});
-		fs.createReadStream("./views/index.html").pipe(response);
+		fs.createReadStream("./views/homepage.html").pipe(response);
 
 	} else {
 		
