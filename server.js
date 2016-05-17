@@ -14,6 +14,13 @@ function send404Response(response){
 //handles a user request
 function onRequest(request, response) {
 
+
+	
+
+
+
+
+
 	if ( request.method == "GET" && request.url == '/' ) {
 		response.writeHead(200, {"Content-Type": "text/html"});
 		fs.createReadStream("./views/homepage.html").pipe(response);
