@@ -1,7 +1,7 @@
 var fs = require("fs");
 
 
-function routeHTML(request, response){
+function routeHTML(request, response){ // routes the correct html page to user 
    if (request.method == "GET"){
 
     if(request.url == "/" || request.url == "/homepage"){
@@ -33,30 +33,47 @@ function routeHTML(request, response){
   }
 } 
 
-function routeCSS(request, response){
+function routeCSS(request, response){ // routes correct css page to user 
 
-	if( request.url == "/public/stylesheets/homepage.css"){
-		response.writeHead(200, {'Content-type': "text/css"});
-		fs.createReadStream("../public/stylesheets/homepage.css").pipe(response);
-		response.end();
-	}
-	else if ( request.url == "/public/stylesheets/about.css"){
-		response.writeHead(200, {'Content-type': "text/css"});
-		fs.createReadStream("../public/stylesheets/about.css").pipe(response);
-		response.end();
-	}
-	else if ( request.url == "/public/stylesheets/puzzle-page.css"){
-		response.writeHead(200, {'Content-type': "text/css"});
-		fs.createReadStream("../public/stylesheets/puzzle-page.css").pipe(response);
-		response.end();
-	}
-	else 
-	{
+	if (request.method == "GET"){
+
+		if( request.url == "/public/stylesheets/homepage.css"){
+			response.writeHead(200, {'Content-type': "text/css"});
+			fs.createReadStream("../public/stylesheets/homepage.css").pipe(response);
+			response.end();
+		}
+		else if ( request.url == "/public/stylesheets/about.css"){
+			response.writeHead(200, {'Content-type': "text/css"});
+			fs.createReadStream("../public/stylesheets/about.css").pipe(response);
+			response.end();
+		}
+		else if ( request.url == "/public/stylesheets/puzzle-page.css"){
+			response.writeHead(200, {'Content-type': "text/css"});
+			fs.createReadStream("../public/stylesheets/puzzle-page.css").pipe(response);
+			response.end();
+		}
+		else 
+		{
 		console.log(request.url);
+		}
 	}
 }  
 
+function routeJS(request, response){ // routes correct js script to user 
+
+	if(request.method == "GET"){
+
+
+	}
+
+
+
+
+
+}
+
 module.exports.routeHTML = routeHTML;
-module.exports.routeCSS = routeCSS;       
+module.exports.routeCSS = routeCSS;
+module.exports.routeJS = routeJS;       
 
 	
