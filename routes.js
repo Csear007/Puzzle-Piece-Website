@@ -29,6 +29,7 @@ function routeHTML(request, response){ // routes the correct html page to user
 		response.writeHead( 404, {'Content-type': "text/plain"});
 		response.write("The page you were searching for was not found\n Sorry!");
 		response.end();
+		
 	}
   }
 } 
@@ -52,12 +53,12 @@ function routeCSS(request, response){ // routes correct css page to user
 			fs.createReadStream("./public/stylesheets/puzzle.css").pipe(response);
 			
 		}
-		else if ( request.url == "/sudoku.css") {
+		else if ( request.url == "public/stylesheets/sudoku.css") {
 			response.writeHead( 200, {'Content-type': "text/css"});
 			fs.createReadStream("./public/stylesheets/sudoku.css").pipe(response);
 
 		}
-		else if ( request.url == "/tic.css") {
+		else if ( request.url == "public/stylesheets/tic.css") {
 			response.writeHead( 200, {'Content-type': "text/css"});
 			fs.createReadStream("./public/stylesheets/tic.css").pipe(response);
 
@@ -74,6 +75,38 @@ function routeCSS(request, response){ // routes correct css page to user
 function routeJS(request, response){ // routes correct js script to user 
 
 	if(request.method == "GET"){
+
+		if( request.url == "/public/javascripts/homepage.js"){
+			response.writeHead(200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/homepage.js").pipe(response);
+
+		}
+		else if ( request.url == "/public/javascripts/about."){
+			response.writeHead(200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/about.js").pipe(response);
+
+		}
+		else if ( request.url == "/public/javascripts/puzzle.js"){
+			response.writeHead(200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/puzzle.js").pipe(response);
+			
+		}
+		else if ( request.url == "public/stylesheets/sudoku.js") {
+			response.writeHead( 200, {'Content-type': "text/js"});
+			fs.createReadStream("./public/stylesheets/sudoku.css").pipe(response);
+
+		}
+		else if ( request.url == "public/stylesheets/tic.js") {
+			response.writeHead( 200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/stylesheets/tic.js").pipe(response);
+
+		}
+		else
+		{
+			response.writeHead( 404, {'Content-type': "text/plain"});
+			response.write("The page you were searching for was not found\n Sorry!");
+			response.end();
+		}
 
 
 	}
