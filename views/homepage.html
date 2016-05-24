@@ -9,7 +9,11 @@
 	<!--- bootstrap !-->
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-	<link rel="stylesheet" text="text/css" href="../public/stylesheets/homepage.css">
+	<!-- stylesheet for page -->
+	<link rel="stylesheet" text="text/css" href="./public/stylesheets/homepage.css">
+
+	<!-- favicon for page 
+	<link rel="icon" type="image/x-icon" href="/public/images/favicon.ico"> -->
 
 
 
@@ -20,11 +24,12 @@
 
 
 <div class="header"> 
-<h1> Simplistic Games </h1>
+<a href="/"><h1> <span>S</span>implistic <div id="letter">G</div>ames </h1></a>
 <ul id="navbar"> 
- <li> Puzzle </li>
- <li> Sudoku </li>
- <li> Tic-Tac-Toe </li>
+ <a href="/puzzle"><li> Puzzle </li></a>
+ <a href="/sudoku"><li> Sudoku </li></a>
+ <a href="/tic-tac"><li> Tic-Tac-Toe </li></a>
+ <a href="/about"><li> About </li></a>
 </ul> 
 </div>
 
@@ -38,6 +43,7 @@
 <section>
 <p> Awesome Paragraph </p>
 
+<h1> Game Leaderboard HERE </h1>
 <table>
 <thead>
 	<th> Games </th>
