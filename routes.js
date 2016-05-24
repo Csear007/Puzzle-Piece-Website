@@ -53,12 +53,12 @@ function routeCSS(request, response){ // routes correct css page to user
 			fs.createReadStream("./public/stylesheets/puzzle.css").pipe(response);
 			
 		}
-		else if ( request.url == "public/stylesheets/sudoku.css") {
+		else if ( request.url == "/public/stylesheets/sudoku.css") {
 			response.writeHead( 200, {'Content-type': "text/css"});
 			fs.createReadStream("./public/stylesheets/sudoku.css").pipe(response);
 
 		}
-		else if ( request.url == "public/stylesheets/tic.css") {
+		else if ( request.url == "/public/stylesheets/tic.css") {
 			response.writeHead( 200, {'Content-type': "text/css"});
 			fs.createReadStream("./public/stylesheets/tic.css").pipe(response);
 
@@ -76,27 +76,27 @@ function routeJS(request, response){ // routes correct js script to user
 
 	if(request.method == "GET"){
 
-		if( request.url == "/public/javascripts/homepage.js"){
+		if( request.url == "/public/javascripts/homepage"){
 			response.writeHead(200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/homepage.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/javascripts/about."){
+		else if ( request.url == "/public/javascripts/about"){
 			response.writeHead(200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/about.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/javascripts/puzzle.js"){
+		else if ( request.url == "/public/javascripts/puzzle"){
 			response.writeHead(200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/puzzle.js").pipe(response);
 			
 		}
-		else if ( request.url == "public/stylesheets/sudoku.js") {
+		else if ( request.url == "/public/stylesheets/sudoku") {
 			response.writeHead( 200, {'Content-type': "text/js"});
 			fs.createReadStream("./public/stylesheets/sudoku.css").pipe(response);
 
 		}
-		else if ( request.url == "public/stylesheets/tic.js") {
+		else if ( request.url == "/public/stylesheets/tic") {
 			response.writeHead( 200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/stylesheets/tic.js").pipe(response);
 
@@ -119,7 +119,7 @@ function routeJS(request, response){ // routes correct js script to user
 
 function lastIndexOf(request){
 
-	for ( var index = request.length; index > 0; index--)
+	for ( var index = request.length; index >= 0; index--)
 	{
 		if(request[index] == "/")
 		{
@@ -130,17 +130,17 @@ function lastIndexOf(request){
 
 function route(request, response){
 
-	var request_string = request.url.substring(0, lastIndexOf(request.url));
+	var request_string = request.url.substring(0, lastIndexOf(request.url) + 1).trim();
 
 	console.log(request.method+ " "+ request.url + " "+request_string);
 
 	if( request_string == "/"){
 		routeHTML(request, response);
 	}
-	else if (request_string == "/public/stylesheets"){
+	else if (request_string == "/public/stylesheets/"){
 		routeCSS(request, response);
 	}
-	else if (request_string == "/public/javascripts"){
+	else if (request_string == "/public/javascripts/"){
 		routeJS(request, response);
 	}
 	else{
