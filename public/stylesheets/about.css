@@ -1,0 +1,19 @@
+h1 {
+	font-style: italic;
+	text-align: center;
+}
+
+
+.face {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+section {
+	height: 600px;
+	text-align: center;
+}
+
+section p {
+	font: 24px;
+}

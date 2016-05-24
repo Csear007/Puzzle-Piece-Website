@@ -1,0 +1,52 @@
+body {
+	background-color: #49a9df;
+}
+
+.header {
+ border-bottom: 2px solid #FD7014;
+ padding-top: 10px;
+ padding-bottom: 15px;
+ background-color: white;
+ text-align: center; 
+}
+
+.header a:hover {
+	text-decoration: none;
+	font-color: black;
+
+}
+.header h1 {
+ display: inline;
+ color: black;
+}
+
+.header span{
+	color: #49a9df;
+	display: inline;
+}
+
+.header #letter {
+	color: #FF5722;
+	display: inline;
+}
+
+#navbar {
+	text-align: center;
+	display: inline;
+	list-style-type: none;
+}
+#navbar li {
+	display: inline;
+	font-size: 24px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-right: 2px ridge black;
+}
+
+#navbar li:hover{
+	color: #FD7014; 
+}
+
+#navbar a {
+	text-decoration: none;
+}
