@@ -24,6 +24,10 @@ function routeHTML(request, response){ // routes the correct html page to user
 		response.writeHead( 200, {'Content-type': "text/html"});
 		fs.createReadStream("./views/tic-toe.html").pipe(response);
 	}
+	else if ( request.url == "/sudoku-btn.html") {
+		response.writeHead( 200, {'Content-type': "text/html"});
+		fs.createReadStream("./views/sudoku-btn.html").pipe(response);
+	}
 	else
 	{
 		response.writeHead( 404, {'Content-type': "text/plain"});
@@ -76,29 +80,29 @@ function routeJS(request, response){ // routes correct js script to user
 
 	if(request.method == "GET"){
 
-		if( request.url == "/public/javascripts/homepage"){
+		if( request.url == "/public/javascripts/homepage.js"){
 			response.writeHead(200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/homepage.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/javascripts/about"){
+		else if ( request.url == "/public/javascripts/about.js"){
 			response.writeHead(200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/about.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/javascripts/puzzle"){
+		else if ( request.url == "/public/javascripts/puzzle.js"){
 			response.writeHead(200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/puzzle.js").pipe(response);
 			
 		}
-		else if ( request.url == "/public/stylesheets/sudoku") {
-			response.writeHead( 200, {'Content-type': "text/js"});
-			fs.createReadStream("./public/stylesheets/sudoku.css").pipe(response);
+		else if ( request.url == "/public/javascripts/sudoku.js") {
+			response.writeHead( 200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/sudoku.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/stylesheets/tic") {
+		else if ( request.url == "/public/javascripts/tic.js") {
 			response.writeHead( 200, {'Content-type': "text/script"});
-			fs.createReadStream("./public/stylesheets/tic.js").pipe(response);
+			fs.createReadStream("./public/javascripts/tic.js").pipe(response);
 
 		}
 		else
@@ -110,14 +114,25 @@ function routeJS(request, response){ // routes correct js script to user
 
 
 	}
-
-
-
-
-
 }
 
-function lastIndexOf(request){
+function routeImages(request, response){ // routes images of website 
+
+	if(request.url == "/public/images/profile.jpg"){
+		response.writeHead(200, {'Content-type': 'images/jpg'});
+		fs.createReadStream("./public/images/profile.jpg").pipe(response);
+	}
+	else
+	{
+
+	}
+
+	
+
+	
+}
+
+function lastIndexOf(request){ // helper function in routing pages 
 
 	for ( var index = request.length; index >= 0; index--)
 	{
@@ -128,7 +143,7 @@ function lastIndexOf(request){
 	}
 }
 
-function route(request, response){
+function route(request, response){ // controls what routing functions are used 
 
 	var request_string = request.url.substring(0, lastIndexOf(request.url) + 1).trim();
 
@@ -142,6 +157,9 @@ function route(request, response){
 	}
 	else if (request_string == "/public/javascripts/"){
 		routeJS(request, response);
+	}
+	else if (request_string == "/public/images/"){
+		routeImages(request, response);
 	}
 	else{
 		response.writeHead( 404, {'Content-type': 'text/plain'});
