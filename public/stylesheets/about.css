@@ -4,9 +4,16 @@ h1 {
 }
 
 
+}
 .face {
-	margin-right: auto;
-	margin-left: auto;
+	width: auto;
+	align-content: center;
+}
+
+.face img {
+	border-radius: 25px;
+	border-width: 2px;
+	border-color: solid black;
 }
 
 section {
