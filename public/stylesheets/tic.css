@@ -50,3 +50,33 @@ body {
 #navbar a {
 	text-decoration: none;
 }
+
+
+.container .jumbotron .center {
+	text-align: center;
+}
+
+.container .jumbotron h2 {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	text-align: center;
+
+}
+
+.container .jumbotron .center p {
+	display: inline;
+	margin-top: 10px;
+}
+
+.container .jumbotron .center button {
+
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.container .jumbotron #start_button {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}

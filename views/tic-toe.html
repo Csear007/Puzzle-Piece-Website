@@ -13,7 +13,8 @@
 	<!-- stylesheet for page -->
 	<link rel="stylesheet" text="text/css" href="./public/stylesheets/tic.css">
 
-
+	<!-- jquery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
 
 </head>
@@ -29,6 +30,24 @@
  <a href="/tic-tac"><li> Tic-Tac-Toe </li></a>
  <a href="/about"><li> About </li></a>
 </ul> 
+</div>
+
+
+
+<div class="container">
+	<div class="jumbotron">
+			<h2> How would you like your Tic-Tac-Toe? </h2>
+
+			<div class="center">
+				<p> Select : </p>
+				<button type="button" class="btn btn-primary"> One-Player </button>
+				<button type="button" class="btn btn-danger"> Two-Player </button>
+			</div>
+
+
+			<button id="start_button" type="button" class="btn btn-warning"> Let's get started! </button>
+
+	</div>
 </div>
 
 
@@ -56,7 +75,7 @@
 
 
 
-
+<script src="/public/javascripts/tic.js" text="text/javascript"></script>
 
 </body>
 </html>
