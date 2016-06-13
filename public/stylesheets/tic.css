@@ -66,7 +66,8 @@ body {
 
 .container .jumbotron .center p {
 	display: inline;
-	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
 .container .jumbotron .center button {
@@ -75,8 +76,35 @@ body {
 	padding-right: 10px;
 }
 
-.container .jumbotron #start_button {
+.container .jumbotron .bottom {
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 }
+
+.container .jumbotron .bottom {
+	text-align: center;
+}
+
+.container .jumbotron .bottom #start_button {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.container .jumbotron .colors {
+	text-align: center;
+	margin-top: 15px;
+}
+.container .jumbotron .colors p {
+	display: inline;
+}
+.container .jumbotron .colors .btn-group {
+	display: inline-block;
+}
+
+.container .jumbotron .colors. .btn-group button {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+
