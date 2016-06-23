@@ -122,8 +122,14 @@ function routeImages(request, response){ // routes images of website
 		response.writeHead(200, {'Content-type': 'images/jpg'});
 		fs.createReadStream("./public/images/profile.jpg").pipe(response);
 	}
-	else
+	else if(request.url == "/public/images/bananas.jpg"){
+		response.writeHead(200, {'Content-type': 'images/jpg'});
+		fs.createReadStream("./public/images/bananas.jpg").pipe(response);
 	{
+	else if(request.url == "/public/images/kiwi.jpg"){
+		response.writeHead(200, {'Content-type': 'images/jpg'});
+		fs.createReadStream("./public/images/kiwi.jpg").pipe(response);
+	else {
 
 	}
 
