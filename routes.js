@@ -125,11 +125,15 @@ function routeImages(request, response){ // routes images of website
 	else if(request.url == "/public/images/bananas.jpg"){
 		response.writeHead(200, {'Content-type': 'images/jpg'});
 		fs.createReadStream("./public/images/bananas.jpg").pipe(response);
-	{
+	}
 	else if(request.url == "/public/images/kiwi.jpg"){
 		response.writeHead(200, {'Content-type': 'images/jpg'});
 		fs.createReadStream("./public/images/kiwi.jpg").pipe(response);
+	}
 	else {
+		response.writeHead( 404, {'Content-type': "text/plain"});
+		response.write("The page you were searching for was not found\n Sorry!");
+		response.end();
 
 	}
 
