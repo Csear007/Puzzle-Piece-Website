@@ -1,5 +1,8 @@
 body {
-	background-color: #49a9df;
+	background-color: #89C4FF;
+	//#E8F1F5
+	//#89C4FF
+	//#49a9df
 }
 
 .header {
@@ -56,7 +59,7 @@ body {
 	text-align: center;
 }
 
-.container .jumbotron h2 {
+.container .jumbotron h2{
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
@@ -94,17 +97,42 @@ body {
 .container .jumbotron .colors {
 	text-align: center;
 	margin-top: 15px;
+	padding-right: 50px;
 }
 .container .jumbotron .colors p {
 	display: inline;
 }
 .container .jumbotron .colors .btn-group {
 	display: inline-block;
-}
 
-.container .jumbotron .colors. .btn-group button {
+}
+.container .jumbotron .colors .btn-group:active{
+	outline: none !important;
+
+}
+.container .jumbotron .colors .btn-group button {
 	padding-left: 10px;
 	padding-right: 10px;
+	outline: none !important;
+}
+
+.container .jumbotron .colors .btn-group button:active{
+	outline: none !important;
+}
+
+
+.error_box {
+	width: auto;
+	height: 300;
+	border-top: 2px solid red;
+	border-bottom: 2px solid red;
+	background-color: #eee;
+	text-align: center;
+	display: none;
+}
+
+.error_box h1 {
+
 }
 
 
