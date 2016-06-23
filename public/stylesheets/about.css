@@ -7,7 +7,7 @@ h1 {
 }
 .face {
 	width: auto;
-	align-content: center;
+	text-align: center;
 }
 
 .face img {

@@ -1,5 +1,5 @@
 body {
-	background-color: #49a9df;
+	background-color: #89C4FF;
 }
 
 .header {
@@ -8,6 +8,7 @@ body {
  padding-bottom: 15px;
  background-color: white;
  text-align: center; 
+ width: auto;
 }
 
 .header a:hover {
