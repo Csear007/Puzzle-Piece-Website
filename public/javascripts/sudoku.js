@@ -1,8 +1,9 @@
 
-
+var sudoku = require("./sudoku-logic.js");
 var difficulty = null; 
 var timer = null;
 var err_check = null;
+
 
 $(document).ready( function(){
 	$('.container .jumbotron .stage').load('sudoku-btn.html');
@@ -27,6 +28,9 @@ $('.btn btn-danger').click(function() {
 
 
 $('#start_button').click(function() {
+
+
+	var puzzle = sudoku.generate(difficulty.toLowerCase());
 
 	$('.container .jumbotron .stage').load();
 
