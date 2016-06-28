@@ -4,21 +4,24 @@
 var players = null;
 var color_scheme = null; 
 
+var turns = Math.floor(Math.random() + 1);
+
+
+
+
+$(document).ready(function(){
+
+	$('#footer .container-fluid').load("./footer.html");
+
+
+});
+
 $('#start_button').click( function (){
 
 
 	(players == null || color_scheme == null) ? $('.error_box').show() : $('.error_box').hide();
 
-	// if( players == null || color_scheme == null)
-	// {
-	// 	$('.error_box').show();
-	// }
-	// else {
-	// 	$('.error_box').hide();
-	// }
-
-
-	$(".container .jumbotron").load();
+	$(".container .jumbotron").load("./tic-board.html");
 
 	console.log("start button clicked");
 
@@ -63,4 +66,5 @@ $('.colors .btn-group .btn-success').mouseenter(function(){
 
 	console.log("mouseenter is working" + color);
 });
+
 
