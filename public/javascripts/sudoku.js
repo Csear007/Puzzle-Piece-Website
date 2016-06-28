@@ -1,12 +1,19 @@
 
-var sudoku = require("./sudoku-logic.js");
+var sudoku = null 
 var difficulty = null; 
 var timer = null;
 var err_check = null;
 
 
+
+$.get("./public/javascripts/sudoku-logic.js", function(data) {
+	sudoku = data;
+}); 
+
+
 $(document).ready( function(){
 	$('.container .jumbotron .stage').load('sudoku-btn.html');
+	$('#footer').load("./footer.html");
 });
 
 
@@ -32,6 +39,6 @@ $('#start_button').click(function() {
 
 	var puzzle = sudoku.generate(difficulty.toLowerCase());
 
-	$('.container .jumbotron .stage').load();
+	$('.container .jumbotron .stage').html();
 
 });

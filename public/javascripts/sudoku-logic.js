@@ -700,8 +700,8 @@ var sudoku = (function() {
 	return module;
 })();
 
-if (typeof exports !== 'undefined') {
+//if (typeof module.exports !== 'undefined') {
 	for (var i in sudoku) {
-		exports[i] = sudoku[i];
+		module.exports[i] = sudoku[i];
 	}
-}
+//}
