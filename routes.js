@@ -28,6 +28,14 @@ function routeHTML(request, response){ // routes the correct html page to user
 		response.writeHead( 200, {'Content-type': "text/html"});
 		fs.createReadStream("./views/sudoku-btn.html").pipe(response);
 	}
+	else if ( request.url == "/footer.html") {
+		response.writeHead( 200, {'Content-type': "text/html"});
+		fs.createReadStream("./views/footer.html").pipe(response);
+	}
+	else if ( request.url == "/tic-board.html") {
+		response.writeHead( 200, {'Content-type': "text/html"});
+		fs.createReadStream("./views/tic-board.html").pipe(response);
+	}
 	else
 	{
 		response.writeHead( 404, {'Content-type': "text/plain"});
@@ -67,6 +75,16 @@ function routeCSS(request, response){ // routes correct css page to user
 			fs.createReadStream("./public/stylesheets/tic.css").pipe(response);
 
 		}
+		else if ( request.url == "/public/stylesheets/footer.css") {
+			response.writeHead( 200, {'Content-type': "text/css"});
+			fs.createReadStream("./public/stylesheets/footer.css").pipe(response);
+
+		}
+		else if ( request.url == "/public/stylesheets/tic-board.css") {
+			response.writeHead( 200, {'Content-type': "text/css"});
+			fs.createReadStream("./public/stylesheets/tic-board.css").pipe(response);
+
+		}
 		else
 		{
 			response.writeHead( 404, {'Content-type': "text/plain"});
@@ -98,6 +116,11 @@ function routeJS(request, response){ // routes correct js script to user
 		else if ( request.url == "/public/javascripts/sudoku.js") {
 			response.writeHead( 200, {'Content-type': "text/script"});
 			fs.createReadStream("./public/javascripts/sudoku.js").pipe(response);
+
+		}
+		else if ( request.url == "/public/javascripts/sudoku-logic.js"){
+			response.writeHead(200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/sudoku-logic.js").pipe(response);
 
 		}
 		else if ( request.url == "/public/javascripts/tic.js") {
