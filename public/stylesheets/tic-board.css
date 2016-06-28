@@ -1,0 +1,30 @@
+
+
+#tic-board {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#tic-board td {
+	width: 100px;
+	height: 100px;
+}
+
+
+#tic-board .top td {
+	border-bottom: 2px solid black;
+}
+
+#tic-board .middle td {
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+#tic-board .bottom td {
+	border-top: 2px solid black;
+}
+
+#tic-board #center {
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+}
