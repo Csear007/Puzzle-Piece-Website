@@ -1,3 +1,7 @@
+
+@import url(./footer.css);
+@import url(./tic-board.css);
+
 body {
 	background-color: #89C4FF;
 	//#E8F1F5
@@ -64,6 +68,7 @@ body {
 	margin-right: auto;
 	margin-bottom: 10px;
 	text-align: center;
+	font-size: 45px;
 
 }
 

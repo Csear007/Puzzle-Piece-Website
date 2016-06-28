@@ -1,5 +1,9 @@
+
+@import url("./footer.css");
+
 body {
 	background-color: #89C4FF;
+	height: auto;
 }
 
 .header {
@@ -54,6 +58,10 @@ body {
 .container .jumbotron .stage {
 	text-align: center;
 	display: inline;
+}
+
+.container .jumbotron .stage h1 {
+	font-size: 50px;
 }
 
 .container .jumbotron .stage .center {
