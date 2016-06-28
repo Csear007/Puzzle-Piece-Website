@@ -1,0 +1,11 @@
+.container-fluid .jumbotron {
+
+	background-image: url("https://api.jquery.com/jquery-wp-content/themes/jquery/images/bg-footer-noise.jpg");
+	background-repeat: repeat-x;
+	background-size: contain;
+	//100px 15px 140px 140px
+}
+
+.container-fluid {
+	width: auto;
+}
