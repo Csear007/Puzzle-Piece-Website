@@ -1,4 +1,4 @@
-.container-fluid .jumbotron {
+#footer .jumbotron {
 
 	background-image: url("https://api.jquery.com/jquery-wp-content/themes/jquery/images/bg-footer-noise.jpg");
 	background-repeat: repeat-x;
@@ -6,6 +6,37 @@
 	//100px 15px 140px 140px
 }
 
-.container-fluid {
-	width: auto;
+#footer {
+	float: bottom;
 }
+
+
+#footer .jumbotron {
+	text-align: center;
+}
+
+#footer #list-content {
+	color: white;
+	list-style-type: none;
+}
+
+#footer #list-content #game-menu {
+	list-style-type: none;
+}
+#footer #list-content #game-menu li {
+	display: block;
+}
+
+#footer .jumbotron #header {
+	display: inline-block;
+}
+
+#footer .jumbotron #header li {
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	margin-right: 15px;
+	margin-left: 15px;
+	border-bottom: 2px solid #49a9df;
+}
+
