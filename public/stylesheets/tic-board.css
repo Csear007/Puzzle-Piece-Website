@@ -1,4 +1,12 @@
 
+#score {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#score .bottom td {
+	text-align: left;
+}
 
 #tic-board {
 	margin-right: auto;
