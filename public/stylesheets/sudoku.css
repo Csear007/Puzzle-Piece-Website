@@ -3,7 +3,6 @@
 
 body {
 	background-color: #89C4FF;
-	height: auto;
 }
 
 .header {
@@ -70,10 +69,8 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-.container .jumbotron .stage .center button {
+.container .jumbotron .stage .center .dropdown {
 	display: inline;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 .container .jumbotron .stage .center p {
