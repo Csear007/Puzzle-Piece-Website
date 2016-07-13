@@ -1,0 +1,76 @@
+#sudoku-grid {
+	width: auto;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+tbody {
+
+	width: 800px;
+	height: 800px;
+}
+
+
+tbody tr td {
+	width: 50px;
+	height: 50px;
+}
+
+#A td {
+	border-top: 2px solid black;
+}
+
+#I td {
+	border-bottom: 2px solid black;
+}
+
+tr * {
+	border: 2px solid grey;
+}
+
+.one {
+	border-left: 2px solid black;
+}
+
+.nine {
+	border-right: 2px solid black;
+}
+
+.three {
+	border-right: 2px solid black;
+}
+
+.four {
+	border-left: 2px solid black;
+}
+
+.six {
+	border-right: 2px solid black;
+}
+
+.seven {
+	border-left: 2px solid black;
+}
+
+#C td {
+	border-bottom: 2px solid black;
+}
+
+#D td {
+	border-top: 2px solid black;
+}
+
+#F td {
+	border-bottom: 2px solid black;
+}
+
+#G td {
+	border-top: 2px solid black;
+}
+
+
+td {
+	font-size: 20px;
+}
