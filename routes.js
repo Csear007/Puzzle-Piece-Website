@@ -36,6 +36,10 @@ function routeHTML(request, response){ // routes the correct html page to user
 		response.writeHead( 200, {'Content-type': "text/html"});
 		fs.createReadStream("./views/tic-board.html").pipe(response);
 	}
+	else if ( request.url == "/sudoku-grid.html") {
+		response.writeHead( 200, {'Content-type': "text/html"});
+		fs.createReadStream("./views/sudoku-grid.html").pipe(response);
+	}
 	else
 	{
 		response.writeHead( 404, {'Content-type': "text/plain"});
@@ -83,6 +87,11 @@ function routeCSS(request, response){ // routes correct css page to user
 		else if ( request.url == "/public/stylesheets/tic-board.css") {
 			response.writeHead( 200, {'Content-type': "text/css"});
 			fs.createReadStream("./public/stylesheets/tic-board.css").pipe(response);
+
+		}
+		else if ( request.url == "/public/stylesheets/sudoku-grid.css") {
+			response.writeHead( 200, {'Content-type': "text/css"});
+			fs.createReadStream("./public/stylesheets/sudoku-grid.css").pipe(response);
 
 		}
 		else
