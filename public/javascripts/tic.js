@@ -10,7 +10,6 @@ var turns = 1;
 
 
 
-
 $(document).ready(function(){
 
 	$('#footer').load("./footer.html");
@@ -35,21 +34,21 @@ $('#start_button').click( function (){
 
 
 $('.container .jumbotron .center button').click( function () {
-	players = $(this).val();
+	players = $(this).text().trim();
 
 	console.log("players button clicked");
 });
 
 $('.container .jumbotron .colors .btn-group button').click( function (){
-	color_scheme = $(this).val();
+	color_scheme = $(this).text().trim();
 
 	console.log("colors button clicked");
 });
 
 
-$('#tic-board tbody tr td').click(function(){
+$('#tic-stage').on("click", "#tic-board td", function(){
 
-	var square = $('#tic-board td');
+	var square = $('#tic-board tbody tr td');
 
 	console.log(square);
 
@@ -60,11 +59,11 @@ $('#tic-board tbody tr td').click(function(){
 
 
 		if(turns % 2 === 1){
-			$(this).text("X");
+			$(this).html("X");
 			turns += 1;
 		}
 		else {
-			$(this).text("O");
+			$(this).html("O");
 			turns += 1;
 		}
 		$(this).addClass("marked");

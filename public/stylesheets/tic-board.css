@@ -2,10 +2,26 @@
 #score {
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+
+
+#score .top th {
+	width: 100px;
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	border-left: 2px solid black;
+	border-right: 2px solid black;
 }
 
 #score .bottom td {
 	text-align: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100px;
 }
 
 #tic-board {
@@ -35,4 +51,51 @@
 #tic-board #center {
 	border-left: 2px solid black;
 	border-right: 2px solid black;
+}
+
+#tic-board td {
+	text-align: center;
+	font-size: 45px;
+}
+
+.Christmas_X{
+	color: red;
+}
+
+
+.Christmas_O {
+	color: green;
+}
+
+
+.Halloween_X {
+	color: orange;
+
+}
+
+.Halloween_O {
+	color: black;
+
+}
+
+
+.Simple-Games_X {
+	color: orange;
+
+}
+
+.Simple-Games_O {
+	color: blue;
+
+}
+
+
+.Plain_X {
+	color: black;
+
+}
+
+.Plain_O {
+	color: white;
+
 }
