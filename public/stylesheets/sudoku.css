@@ -2,6 +2,7 @@
 @import url("./footer.css");
 
 @import url('./sudoku-grid.css');
+@import url(./leaderboard.css);
 
 body {
 	background-color: #89C4FF;
