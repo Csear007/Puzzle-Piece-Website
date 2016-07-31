@@ -3,12 +3,28 @@
 
 var players = null;
 var color_scheme = null; 
+var leaderboard = null;
 
 var color_order = Math.floor(Math.random() + 1);
 
 var turns = 1; 
 
+$.ajax("./public/javascripts/leaderboard.php", 
+{
+	method: 'POST',
+	dataType: "html",
+	data: {select: 'tic-wins'},
+	success: function(data, textStatus, jqXHR){
 
+		window.alert(jqXHR);
+		$('#leaderboard .jumbotron').html(data);
+
+	},
+	error: function(error){
+		window.alert(error);
+		console.log(error);
+	}
+});
 
 $(document).ready(function(){
 

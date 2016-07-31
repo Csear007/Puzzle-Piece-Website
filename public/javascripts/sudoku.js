@@ -5,6 +5,7 @@ var timer = null;
 var err_check = null;
 
 
+
 $.ajax("./public/javascripts/sudoku-logic.js", 
 {
 	method: 'GET',
@@ -17,6 +18,24 @@ $.ajax("./public/javascripts/sudoku-logic.js",
 
 
 });
+
+$.ajax("./public/javascripts/leaderboard.php", 
+{
+	method: 'POST',
+	data: {select: 'sudoku-wins'},
+	dataType: "html",
+	sucess: function(data, textStatus, jqXHR){
+
+		window.alert(data);
+		$('#leaderboard .jumbotron').html(data);
+	},
+	error: function(error){
+		window.alert(error);
+		console.log(error);
+	}
+
+});
+
 
 $(document).ready( function(){
 	$('.container .jumbotron .stage').load('sudoku-btn.html');
