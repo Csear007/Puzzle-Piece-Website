@@ -94,6 +94,11 @@ function routeCSS(request, response){ // routes correct css page to user
 			fs.createReadStream("./public/stylesheets/sudoku-grid.css").pipe(response);
 
 		}
+		else if ( request.url == "/public/stylesheets/leaderboard.css") {
+			response.writeHead( 200, {'Content-type': "text/css"});
+			fs.createReadStream("./public/stylesheets/leaderboard.css").pipe(response);
+
+		}
 		else
 		{
 			response.writeHead( 404, {'Content-type': "text/plain"});
@@ -137,6 +142,11 @@ function routeJS(request, response){ // routes correct js script to user
 			fs.createReadStream("./public/javascripts/tic.js").pipe(response);
 
 		}
+		else if ( request.url == "/public/javascripts/leaderboard.php") {
+			response.writeHead( 200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/leaderboard.php").pipe(response);
+
+		}
 		else
 		{
 			response.writeHead( 404, {'Content-type': "text/plain"});
@@ -144,6 +154,21 @@ function routeJS(request, response){ // routes correct js script to user
 			response.end();
 		}
 
+
+	} 
+	else if ( request.method ="POST"){
+
+		 if ( request.url == "/public/javascripts/leaderboard.php") {
+			response.writeHead( 200, {'Content-type': "text/script"});
+			fs.createReadStream("./public/javascripts/leaderboard.php").pipe(response);
+
+		}
+		else
+		{
+			response.writeHead( 404, {'Content-type': "text/plain"});
+			response.write("The page you were searching for was not found\n Sorry!");
+			response.end();
+		}
 
 	}
 }
@@ -169,9 +194,7 @@ function routeImages(request, response){ // routes images of website
 
 	}
 
-	
 
-	
 }
 
 function lastIndexOf(request){ // helper function in routing pages 
