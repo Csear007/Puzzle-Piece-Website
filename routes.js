@@ -142,9 +142,9 @@ function routeJS(request, response){ // routes correct js script to user
 			fs.createReadStream("./public/javascripts/tic.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/javascripts/leaderboard.php") {
+		else if ( request.url == "/public/javascripts/leaderboard.js") {
 			response.writeHead( 200, {'Content-type': "text/script"});
-			fs.createReadStream("./public/javascripts/leaderboard.php").pipe(response);
+			fs.createReadStream("./public/javascripts/leaderboard.js").pipe(response);
 
 		}
 		else
@@ -158,9 +158,9 @@ function routeJS(request, response){ // routes correct js script to user
 	} 
 	else if ( request.method ="POST"){
 
-		 if ( request.url == "/public/javascripts/leaderboard.php") {
+		 if ( request.url == "/public/javascripts/leaderboard.js") {
 			response.writeHead( 200, {'Content-type': "text/script"});
-			fs.createReadStream("./public/javascripts/leaderboard.php").pipe(response);
+			fs.createReadStream("./public/javascripts/leaderboard.js").pipe(response);
 
 		}
 		else

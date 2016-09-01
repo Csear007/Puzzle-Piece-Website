@@ -19,11 +19,11 @@ $.ajax("./public/javascripts/sudoku-logic.js",
 
 });
 
-$.ajax("./public/javascripts/leaderboard.php", 
+$.ajax("./public/javascripts/leaderboard.js", 
 {
 	method: 'POST',
 	data: {select: 'sudoku-wins'},
-	dataType: "html",
+	dataType: "script",
 	sucess: function(data, textStatus, jqXHR){
 
 		window.alert(data);
