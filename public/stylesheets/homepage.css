@@ -4,6 +4,13 @@
 body {
 	background-color: #89C4FF;
 }
+html {
+   min-height: 100%;
+}
+
+body {
+   min-height: 100%;
+}
 
 .header {
  border-bottom: 2px solid #FD7014;
@@ -60,7 +67,7 @@ body {
 	background-image: url("");
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-color: white; 
+	background-color: #eee;
 	border-radius: 0px 0px 25px 25px;
 
 }
@@ -70,7 +77,7 @@ body {
 }
 
 section { 
-	background-color: white;
+	background-color: #eee;
 	text-align: center;
 	height: 600px;
 	width: 1140px;

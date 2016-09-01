@@ -1,5 +1,14 @@
+
+@import url("./footer.css");
+
+
 body {
 	background-color: #89C4FF;
+	min-height: 100%;
+}
+
+html {
+	min-height: 100%;
 }
 
 .header {

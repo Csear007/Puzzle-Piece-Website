@@ -3,9 +3,12 @@
 @import url(./tic-board.css);
 @import url(./leaderboard.css);
 
-
+html{
+	min-height: 100%;
+}
 body {
 	background-color: #89C4FF;
+	min-height: 100%;
 	//#E8F1F5
 	//#89C4FF
 	//#49a9df
