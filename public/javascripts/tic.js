@@ -1,4 +1,4 @@
-// tic-tac-toe.js page 
+	// tic-tac-toe.js page 
 
 
 var players = null;
@@ -9,21 +9,22 @@ var color_order = Math.floor(Math.random() + 1);
 
 var turns = 1; 
 var win;
+var clicks = 0;
 
 $.ajax("./public/javascripts/leaderboard.js", 
 {
 	method: 'POST',
-	dataType: "script",
+	dataType: "html",
 	data: {select: 'tic-wins'},
 	success: function(data, textStatus, jqXHR){
 
+		console.log(data);
 		console.log(jqXHR);
 
 		$('#leaderboard .jumbotron').html(data);
 
 	},
 	error: function(error){
-		window.alert(error);
 		console.log(error);
 	}
 });
@@ -133,7 +134,8 @@ function win_tie(grid){
 		}
 	}
 	else {
-		consoele.log("nobody has won yet");
+		console.log("nobody has won yet");
+		
 	}
 
 	if(win[0]){
@@ -149,6 +151,7 @@ function win_tie(grid){
 $('#tic-stage').on("click", "#tic-board td", function(){
 
 	var square = $('#tic-board tbody tr td');
+
 
 	if(!win){
 
@@ -167,6 +170,7 @@ $('#tic-stage').on("click", "#tic-board td", function(){
 				turns += 1;
 			}
 			$(this).addClass("marked");
+			clicks++;
 
 
 			if(color_order % 2 === 0){
@@ -180,12 +184,19 @@ $('#tic-stage').on("click", "#tic-board td", function(){
 			
 		}
 	}
-	else {
-		
-	}
+	
 
 	win = win_tie(square);
+
+	if(clicks > 8 && !win){
+		$("#leaderboard .jumbotron").html("<h1> a tie has occured! </h1>");
+	}
+
 });
+
+$('#restart_button').on('click', function(){
+	$('#tic-stage').load("/tic-board.html");
+})
 
 
 
