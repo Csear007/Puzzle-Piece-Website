@@ -1,1 +1,31 @@
 // this is the leader board stylesheet
+
+.leader-grid{
+	margin-right: auto;
+	margin-left: auto;
+	height: auto;
+}
+
+
+.heading {
+
+	text-align: center;
+	font-size: 18px;
+	width: auto;
+}
+
+
+.data_columns {
+	width: auto;
+}
+
+.data_columns * {
+	border: 2px solid black;
+	font-size:  16px;
+}
+
+.data_columns tr td {
+	width: 50px;
+	height: 50px;
+}
+
