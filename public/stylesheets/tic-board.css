@@ -13,8 +13,12 @@
 	padding-left: 10px;
 	padding-right: 10px;
 
-	border-left: 2px solid black;
+	border-bottom: 2px solid black;
+}
+
+#score .top #center {
 	border-right: 2px solid black;
+	border-left: 2px solid black;
 }
 
 #score .bottom td {
@@ -85,7 +89,7 @@
 }
 
 .Simple-Games_O {
-	color: blue;
+	color: #89C4FF;
 
 }
 
@@ -99,3 +103,11 @@
 	color: white;
 
 }
+
+
+#restart {
+	display: inline-block;
+	text-align: center;
+}
+
+

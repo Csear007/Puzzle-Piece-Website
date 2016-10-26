@@ -77,14 +77,15 @@ body {
 
 }
 
-.container .jumbotron .center p {
-	display: inline;
+.container .jumbotron .center h3 {
+	display: inline-block;
 	margin-left: 5px;
 	margin-right: 5px;
 }
 
 .container .jumbotron .center button {
 
+	display: inline-block;
 	padding-left: 10px;
 	padding-right: 10px;
 }
@@ -107,13 +108,14 @@ body {
 .container .jumbotron .colors {
 	text-align: center;
 	margin-top: 15px;
-	padding-right: 50px;
+	padding-right: 80px;
 }
-.container .jumbotron .colors p {
+.container .jumbotron .colors h2 {
 	display: inline;
 }
 .container .jumbotron .colors .btn-group {
 	display: inline-block;
+	margin-bottom: 15px;
 
 }
 .container .jumbotron .colors .btn-group:active{
