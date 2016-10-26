@@ -1,4 +1,9 @@
 var fs = require("fs");
+var database = require("./public/javascripts/leaderboard.js");
+
+var regex = new RegExp("/leaderboard.js/i");
+
+
 
 
 function routeHTML(request, response){ // routes the correct html page to user 
@@ -142,9 +147,12 @@ function routeJS(request, response){ // routes correct js script to user
 			fs.createReadStream("./public/javascripts/tic.js").pipe(response);
 
 		}
-		else if ( request.url == "/public/javascripts/leaderboard.js") {
+		else if ( request.url == "/public/javascripts/leaderboard.js" ) {
 			response.writeHead( 200, {'Content-type': "text/script"});
-			fs.createReadStream("./public/javascripts/leaderboard.js").pipe(response);
+
+			var data = database.query();
+			response.write(data);
+			response.end();
 
 		}
 		else
@@ -153,24 +161,8 @@ function routeJS(request, response){ // routes correct js script to user
 			response.write("The page you were searching for was not found\n Sorry!");
 			response.end();
 		}
-
-
 	} 
-	else if ( request.method ="POST"){
-
-		 if ( request.url == "/public/javascripts/leaderboard.js") {
-			response.writeHead( 200, {'Content-type': "text/script"});
-			fs.createReadStream("./public/javascripts/leaderboard.js").pipe(response);
-
-		}
-		else
-		{
-			response.writeHead( 404, {'Content-type': "text/plain"});
-			response.write("The page you were searching for was not found\n Sorry!");
-			response.end();
-		}
-
-	}
+	
 }
 
 function routeImages(request, response){ // routes images of website 
@@ -197,6 +189,37 @@ function routeImages(request, response){ // routes images of website
 
 }
 
+function routeQueries(request, response){
+
+ 	if (request.method = "POST"){
+		var fullbody = '';
+
+		request.on("data", function(chunk){
+
+			fullbody += chunk;
+		});
+
+		request.on('end', function(){
+
+			response.writeHead(200, {'Content-type': 'application/json'});
+
+
+			console.log(fullbody);
+
+			var html_data = database.querying(fullbody);
+			//console.log(html_data);
+			response.write(html_data);
+			response.end();
+		});
+	}
+	else {
+		response.writeHead( 404, {'Content-type': 'text/plain'});
+		response.write("Sorry ... The "+request.url+" page you were looking for was not found");
+		response.end();
+	}
+
+}
+
 function lastIndexOf(request){ // helper function in routing pages 
 
 	for ( var index = request.length; index >= 0; index--)
@@ -214,11 +237,17 @@ function route(request, response){ // controls what routing functions are used
 
 	console.log(request.method+ " "+ request.url + " "+request_string);
 
+
+
 	if( request_string == "/"){
 		routeHTML(request, response);
 	}
 	else if (request_string == "/public/stylesheets/"){
 		routeCSS(request, response);
+	}
+	else if( request.url == "/public/javascripts/leaderboard.js"){
+		routeQueries(request, response);
+
 	}
 	else if (request_string == "/public/javascripts/"){
 		routeJS(request, response);
