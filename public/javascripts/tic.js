@@ -11,6 +11,10 @@ var turns = 1;
 var win;
 var clicks = 0;
 
+var ties = 0;
+var x_wins = 0;
+var o_wins = 0;
+
 $.ajax("./public/javascripts/leaderboard.js", 
 {
 	method: 'POST',
@@ -25,7 +29,8 @@ $.ajax("./public/javascripts/leaderboard.js",
 
 	},
 	error: function(error){
-		console.log(error);
+		$('#leaderboard .jumbotron').html("<p>error in connecting to database</p>");
+		console.log("error message for leaderboard ajax");
 	}
 });
 
@@ -33,16 +38,15 @@ $(document).ready(function(){
 
 	$('#footer').load("./footer.html");
 
-
 });
 
 $('#start_button').click( function (){
 
 
 	if (players == null || color_scheme == null) {  
-		$('.error_box').show()
+		$('.alert-danger').show()
 	} else {
-	 $('.error_box').hide();
+	 $('.alert-danger').hide();
 	 $("#tic-stage").load("./tic-board.html");
 	}
 
@@ -139,7 +143,16 @@ function win_tie(grid){
 	}
 
 	if(win[0]){
-		$('#leaderboard .jumbotron').html("<h1> Player "+win[1]+" has won the game!");
+		$('#tic-news').html("<h1> Player "+win[1]+" has won the game!");
+		if(win[1] == "X"){
+			x_wins++;
+			$('#score .bottom #x').html('Wins: '+x_wins);
+		}
+		else{
+			o_wins++;
+			$("#score .bottom #o").html("Wins: "+o_wins);
+
+		}
 	}
 
 	return win[0];
@@ -189,14 +202,22 @@ $('#tic-stage').on("click", "#tic-board td", function(){
 	win = win_tie(square);
 
 	if(clicks > 8 && !win){
-		$("#leaderboard .jumbotron").html("<h1> a tie has occured! </h1>");
+		$("#tic-news").html("<h1> a tie has occured! </h1>");
+		ties++;
+		$('#score .bottom #center').html(ties);
 	}
 
 });
 
-$('#restart_button').on('click', function(){
-	$('#tic-stage').load("/tic-board.html");
-})
+$('#tic-stage').on('click', '.restart .btn-warning', function(){
+	clicks = 0;
+	$('#tic-stage').load("/tic-board.html", function(){
+		$('#score .bottom #x').html(x_wins);
+		$("#score .bottom #center").html(ties);
+		$("#score .bottom #o").html(o_wins);
+	});
+	$('#tic-news').html("<h1> A new game has started </h1>");
+});
 
 
 
