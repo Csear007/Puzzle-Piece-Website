@@ -1,8 +1,21 @@
+
+body {
+	/*background-color: #89c4ff;*/
+}
+
 h1 {
 	font-style: italic;
+	color: black;
+}
+
+
+.row .col-md-4 h1 {
 	text-align: center;
 }
 
+.row .col-md-8 h1 {
+	text-align: left;
+}
 
 }
 .face {
@@ -18,9 +31,9 @@ h1 {
 
 section {
 	height: 600px;
-	text-align: center;
 }
 
 section p {
 	font: 24px;
+	text-align: left;
 }
