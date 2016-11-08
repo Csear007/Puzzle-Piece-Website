@@ -13,12 +13,13 @@
 	padding-left: 10px;
 	padding-right: 10px;
 
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid lightgrey;
+	text-align: center;
 }
 
-#score .top #center {
-	border-right: 2px solid black;
-	border-left: 2px solid black;
+#score .bottom #center {
+	border-right: 2px solid lightgrey;
+	border-left: 2px solid lightgrey;
 }
 
 #score .bottom td {
@@ -26,6 +27,7 @@
 	padding-left: 10px;
 	padding-right: 10px;
 	width: 100px;
+	text-align: center;
 }
 
 #tic-board {
@@ -105,9 +107,19 @@
 }
 
 
-#restart {
-	display: inline-block;
+.restart {
+	display: block;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 35px;
+}
+
+.restart #restart_button {
+
+	padding-left: 50px;
+	padding-right: 50px;
+	
 }
 
 

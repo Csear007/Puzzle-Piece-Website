@@ -1,15 +1,19 @@
 
-<table id="score">
+<div id="tic-news" class="jumbotron">
+	<h1> </h1>
+</div>
+
+<table id="score" class="table">
 	<tbody>
 		<tr class="top">
 			<th> Player X </th>
-			<th id="center"> Score </th>
+			<th> Ties </th>
 			<th> Player O </th>
 		</tr>
 		<tr class="bottom"> 
-			<td> Wins: </td>
-			<td> Ties: </td>
-			<td> Wins: </td>
+			<td id="x"> Wins: </td>
+			<td id="center"> Ties: </td>
+			<td id="o"> Wins: </td>
 		</tr>
 	</tbody>
 </table>
@@ -22,5 +26,5 @@
 	</tbody>
 </table>
 <div class="restart">
-<button type="button" class="btn btn-warning"> Restart </button>
+<button type="button" id="restart_button" class="btn btn-warning btn-lg"> Restart </button>
 </div>
