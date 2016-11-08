@@ -201,7 +201,7 @@ function routeQueries(request, response){
 
 		request.on('end', function(){
 
-			response.writeHead(200, {'Content-type': 'application/json'});
+			response.writeHead(200, {'Content-type': 'text/html'});
 
 
 			console.log(fullbody);
