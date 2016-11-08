@@ -62,6 +62,10 @@ html {
 	text-decoration: none;
 }
 
+.container .jumbotron {
+	margin-bottom: 40px;
+}
+
 .container .jumbotron .stage {
 	text-align: center;
 	display: inline;
@@ -98,4 +102,14 @@ html {
 	margin-top: 10px;
 	padding-right: 10px;
 	padding-left: 10px;
+}
+
+
+.alert-danger {
+	display: none;
+}
+.alert-danger h1  {
+
+
+	text-align: center;
 }
