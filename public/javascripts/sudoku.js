@@ -3,8 +3,10 @@ var sudoku = null
 var difficulty = null; 
 var timer = null;
 var err_check = null;
+var json = null;
 
 
+$(document).ready( function(){
 
 $.ajax("./public/javascripts/sudoku-logic.js", 
 {
@@ -23,21 +25,20 @@ $.ajax("./public/javascripts/leaderboard.js",
 {
 	method: 'POST',
 	data: {select: 'sudoku-wins'},
-	dataType: "script",
-	sucess: function(data, textStatus, jqXHR){
+	dataType: "html",
+	success: function(data, textStatus, jqXHR){
 
-		window.alert(data);
+		console.log(data);
+		console.log(jqXHR);
 		$('#leaderboard .jumbotron').html(data);
 	},
 	error: function(error){
-		window.alert(error);
 		console.log(error);
-	}
+	}, 
 
 });
 
 
-$(document).ready( function(){
 	$('.container .jumbotron .stage').load('sudoku-btn.html');
 	$('#footer').load("./footer.html");
 });
@@ -75,32 +76,41 @@ $('.stage').on("click", ".center .dropdown .dropdown-menu .error",function() {
 $('.stage').on("click", "#start_button", function() {
 
 
-	var puzzle = sudoku.generate(difficulty.toLowerCase().trim());
+	if(difficulty == null ){
+		$(".alert-danger").show();
+	}
 
-	$('.container .jumbotron .stage').load("./sudoku-grid.html", function() {
+	else {
 
-		$.each(puzzle, function(index, value){
+		$('.alert-danger').hide();
 
-		var row = index.substr(0, 1);
-		var column = index.substr(1);
+		var puzzle = sudoku.generate(difficulty.toLowerCase().trim());
 
-		switch(column){
-			case '1': column = "one"; break;
-			case '2': column = "two"; break;
-			case '3': column = "three"; break;
-			case '4': column = "four"; break;
-			case '5': column = "five"; break;
-			case '6': column = "six"; break;
-			case '7': column = "seven"; break;
-			case '8': column = "eight"; break;
-			case '9': column = "nine"; break;
-		}
+		$('.container .jumbotron .stage').load("./sudoku-grid.html", function() {
 
-		$('#'+row+" ."+column).html(value);
+			$.each(puzzle, function(index, value){
+
+			var row = index.substr(0, 1);
+			var column = index.substr(1);
+
+			switch(column){
+				case '1': column = "one"; break;
+				case '2': column = "two"; break;
+				case '3': column = "three"; break;
+				case '4': column = "four"; break;
+				case '5': column = "five"; break;
+				case '6': column = "six"; break;
+				case '7': column = "seven"; break;
+				case '8': column = "eight"; break;
+				case '9': column = "nine"; break;
+			}
+
+			$('#'+row+" ."+column).html(value);
+
+			});
 
 		});
-
-	});
+	}
 
 
 
